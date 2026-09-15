@@ -55,7 +55,21 @@ h1 {
   padding: clamp(50px, 8vh, 100px) 0;
 }
 
-.home-shell h1 { margin-bottom: clamp(36px, 7vh, 72px); }
+.home-banner-placeholder {
+  display: grid;
+  width: 100%;
+  min-height: clamp(160px, 25vw, 300px);
+  margin-bottom: clamp(36px, 7vh, 72px);
+  place-items: center;
+  border: 1px dashed #444b5c;
+  border-radius: 24px;
+  color: var(--muted);
+  background: linear-gradient(145deg, #141720, #0d0f15);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-align: center;
+}
 
 .tile-grid {
   display: grid;
@@ -280,6 +294,7 @@ tbody tr:hover { background: rgba(255,255,255,.025); }
 .faq-item p { margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.7; }
 
 @media (max-width: 700px) {
+  .home-banner-placeholder { min-height: 130px; }
   .tile-grid { grid-template-columns: 1fr; }
   .page-tile { min-height: 230px; aspect-ratio: 1 / .78; }
   .page-heading { align-items: start; flex-direction: column; }

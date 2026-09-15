@@ -37,7 +37,7 @@ async function loadQuote() {
   if (!quoteElement) return;
 
   try {
-    const response = await fetch("data/quotes.csv", { cache: "no-store" });
+    const response = await fetch("quotes.csv", { cache: "no-store" });
     if (!response.ok) throw new Error("Quote file could not be loaded.");
     const rows = parseCSV(await response.text()).slice(1);
     if (!rows.length) throw new Error("No quotes were found.");
@@ -54,7 +54,7 @@ async function loadStats() {
   if (!tableBody) return;
 
   try {
-    const response = await fetch("data/sabremetrics.csv", { cache: "no-store" });
+    const response = await fetch("sabremetrics.csv", { cache: "no-store" });
     if (!response.ok) throw new Error("Statistics could not be loaded.");
     const rows = parseCSV(await response.text()).slice(1);
     tableBody.textContent = "";
@@ -82,7 +82,7 @@ async function loadUpdatedDate() {
 
   if (config.githubUsername && config.repositoryName) {
     try {
-      const path = encodeURIComponent("data/sabremetrics.csv");
+      const path = encodeURIComponent("sabremetrics.csv");
       const endpoint = `https://api.github.com/repos/${config.githubUsername}/${config.repositoryName}/commits?path=${path}&per_page=1`;
       const response = await fetch(endpoint);
       const commits = await response.json();
