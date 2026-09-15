@@ -305,3 +305,7 @@ tbody tr:hover { background: rgba(255,255,255,.025); }
 @media (prefers-reduced-motion: reduce) {
   .page-tile { transition: none; }
 }
+.tile-number,
+.tile-arrow {
+  display: none;
+}
